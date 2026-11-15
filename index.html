@@ -1,181 +1,260 @@
-<!DOCTYPE HTML>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>WZCortex</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WZ Cortex — Inteligência analítica</title>
+<meta name="description" content="A WZ Cortex transforma grandes volumes de informação pública em análise organizada, rastreável e comparável. Conheça o Parllamento, nosso principal produto.">
+<meta name="author" content="WZ Cortex">
+<link rel="canonical" href="https://wzcortex.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wzcortex.com/">
+<meta property="og:title" content="WZ Cortex — Inteligência analítica">
+<meta property="og:description" content="Inteligência analítica que mostra de onde veio cada conclusão. Conheça o Parllamento.">
+<meta property="og:image" content="https://wzcortex.com/assets/img/android-chrome-512x512.png">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0d2137">
+<link rel="icon" href="assets/img/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --tinta:#0d2137;        /* texto e fundos escuros */
+  --tinta-2:#42586f;      /* texto secundário */
+  --papel:#ffffff;
+  --nevoa:#f1f5f8;        /* faixas alternadas */
+  --linha:#dbe4ec;
+  --petroleo:#006e8f;     /* cor de ação, a mesma família do Parllamento */
+  --petroleo-esc:#00566f;
+  --marca-texto:#ffe08a;  /* o grifo sobre o trecho literal */
+  --sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:"Newsreader",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);color:var(--tinta);background:var(--papel);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--petroleo);outline-offset:3px;border-radius:4px}
+.caixa{max-width:1120px;margin:0 auto;padding:0 32px}
+h1,h2,h3{margin:0;font-weight:600;letter-spacing:-0.02em;line-height:1.12}
+p{margin:0}
 
-		  <meta charset="UTF-8">
-		  <meta name="viewport" content="width=device-width, initial-scale=1">
+/* topo */
+.topo{display:flex;align-items:center;justify-content:space-between;padding:26px 0}
+.marca{font-weight:700;font-size:21px;letter-spacing:-0.02em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.marca svg{display:block}
+.menu{display:flex;gap:34px;align-items:center;font-size:15.5px;font-weight:500}
+.menu a{text-decoration:none;color:var(--tinta-2)}
+.menu a:hover{color:var(--tinta)}
+.menu .contato{color:var(--papel);background:var(--tinta);padding:9px 18px;border-radius:8px}
+.menu .contato:hover{background:#16314f;color:#fff}
 
-		  <!-- Título da página (SEO + aba do navegador) -->
-		  <title>WZCortex – Inteligência prática com dados, automação e IA</title>
+/* abertura */
+.abertura{padding:56px 0 96px}
+.abertura .grade{display:grid;grid-template-columns:1.02fr 1fr;gap:64px;align-items:center}
+.abertura h1{font-size:clamp(40px,5vw,62px)}
+.abertura .apoio{margin-top:24px;font-size:20px;color:var(--tinta-2);max-width:30em;line-height:1.55}
+.acoes{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+.botao{display:inline-block;padding:14px 24px;border-radius:9px;font-weight:600;font-size:16px;text-decoration:none;border:1.5px solid transparent}
+.botao.principal{background:var(--petroleo);color:#fff}
+.botao.principal:hover{background:var(--petroleo-esc)}
+.botao.contorno{border-color:var(--linha);color:var(--tinta)}
+.botao.contorno:hover{border-color:var(--tinta-2)}
 
-		  <!-- Descrição para mecanismos de busca (até 160 caracteres) -->
-		  <meta name="description" content="A WZCortex transforma dados, automação e inteligência artificial em soluções acessíveis e úteis para pessoas e empresas.">
+/* a peça central: do trecho à conclusão */
+.prova{position:relative}
+.folha{color:var(--tinta);background:#fff;border:1px solid var(--linha);border-radius:14px;padding:30px 32px 28px;box-shadow:0 24px 60px -28px rgba(13,33,55,.35)}
+.folha .origem{font-size:13.5px;color:var(--tinta-2);display:flex;justify-content:space-between;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--linha)}
+.folha .fala{font-family:var(--serif);font-size:21px;line-height:1.62;margin-top:20px;color:#1a2f47}
+.folha mark{background:var(--marca-texto);color:inherit;padding:1px 3px;border-radius:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.leitura{margin-top:24px;display:grid;gap:10px}
+.leitura div{display:grid;grid-template-columns:118px 1fr;gap:14px;font-size:15px;align-items:baseline}
+.leitura dt{color:var(--tinta-2)}
+.leitura dd{margin:0;font-weight:600}
+.leitura dd span{font-weight:400;color:var(--tinta-2)}
+.nota-exemplo{margin-top:14px;font-size:13px;color:var(--tinta-2);text-align:right}
 
-		  <!-- Palavras-chave estratégicas (opcional no SEO moderno, mas ajuda em buscadores internos) -->
-		  <meta name="keywords" content="WZCortex, inteligência artificial, automação, dados, tecnologia, IA, data engineering, produtos digitais, análise de dados">
+/* seções */
+section{padding:92px 0}
+.faixa{background:var(--nevoa)}
+.cabeca{max-width:40em}
+.cabeca h2{font-size:clamp(30px,3.4vw,42px)}
+.cabeca p{margin-top:18px;font-size:19px;color:var(--tinta-2)}
 
-		  <!-- Autor da página -->
-		  <meta name="author" content="WZCortex">
+/* Parllamento */
+.produto{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.produto .nome{font-size:clamp(44px,5.4vw,68px);font-weight:700;letter-spacing:-0.035em;color:var(--petroleo)}
+.produto .lema{font-family:var(--serif);font-size:24px;margin-top:8px;color:var(--tinta)}
+.produto .texto p{font-size:18px;color:var(--tinta-2)}
+.produto .texto p + p{margin-top:16px}
+.produto .texto strong{color:var(--tinta);font-weight:600}
+.cobertura{margin-top:30px;border-top:1px solid var(--linha)}
+.cobertura div{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:15px 0;border-bottom:1px solid var(--linha);font-size:16px}
+.cobertura dt{color:var(--tinta-2)}
+.cobertura dd{margin:0}
+.fase{margin-top:22px;font-size:15px;color:var(--tinta-2)}
 
-		  <!-- Open Graph (para redes sociais como Facebook, LinkedIn etc.) -->
-		  <meta property="og:title" content="WZCortex – Inteligência prática com dados, automação e IA">
-		  <meta property="og:description" content="Desenvolvemos produtos digitais inteligentes para transformar dados em soluções reais, simples e escaláveis.">
-		  <meta property="og:image" content="https://www.wzcortex.com/imagens/thumb.jpg"> <!-- Substitua com a imagem real -->
-		  <meta property="og:url" content="https://www.wzcortex.com">
-		  <meta property="og:type" content="website">
+/* atuação */
+.frentes{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:0 72px}
+.frente{padding:30px 0;border-top:1px solid var(--linha)}
+.frente h3{font-size:22px}
+.frente p{margin-top:10px;color:var(--tinta-2);font-size:17px;max-width:30em}
 
-		  <!-- Twitter Cards -->
-		  <meta name="twitter:card" content="summary_large_image">
-		  <meta name="twitter:title" content="WZCortex – Inteligência prática com dados, automação e IA">
-		  <meta name="twitter:description" content="Produtos digitais que tornam tecnologia algo útil, acessível e transformador.">
-		  <meta name="twitter:image" content="https://www.wzcortex.com/imagens/thumb.jpg">
+/* método */
+.metodo{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:start}
+.principios{display:grid;gap:30px}
+.principios h3{font-size:20px}
+.principios p{margin-top:8px;color:var(--tinta-2)}
 
-		  <!-- Favicon -->
-		  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-		  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+/* contato */
+.contato-bloco{background:var(--tinta);color:#fff}
+.contato-bloco .grade{display:grid;grid-template-columns:1.2fr .8fr;gap:64px;align-items:end}
+.contato-bloco h2{font-size:clamp(32px,3.8vw,48px)}
+.contato-bloco p{margin-top:18px;color:#b9c8d8;font-size:19px;max-width:28em}
+.contato-bloco .email{font-size:clamp(22px,2.4vw,30px);font-weight:600;text-decoration:none;border-bottom:2px solid var(--marca-texto);padding-bottom:4px;justify-self:end}
+.rodape{background:var(--tinta);color:#8da1b6;font-size:14.5px;border-top:1px solid #213a56}
+.rodape .caixa{display:flex;justify-content:space-between;gap:24px;padding-top:26px;padding-bottom:30px;flex-wrap:wrap}
+.rodape a{text-decoration:none;margin-left:24px}
+.rodape a:hover{color:#fff}
 
-		  <!-- SEO-friendly canonical URL -->
-		  <link rel="canonical" href="https://www.wzcortex.com">
+/* proposta B: abertura escura */
+body.b .cabecalho-abertura{background:var(--tinta);color:#fff}
+body.b .menu a{color:#b9c8d8}
+body.b .menu a:hover{color:#fff}
+body.b .menu .contato{background:#fff;color:var(--tinta)}
+body.b .abertura .apoio{color:#b9c8d8}
+body.b .cabecalho-abertura .botao.principal{background:#fff;color:var(--tinta)}
+body.b .cabecalho-abertura .botao.contorno{border-color:#34506f;color:#fff}
+body.b .folha{border-color:transparent;box-shadow:0 30px 70px -30px rgba(0,0,0,.7)}
+body.b .nota-exemplo{color:#8da1b6}
+body.b .marca .sinal{fill:#fff}
+body.b .marca .sinal-fundo{fill:var(--petroleo)}
 
-	</head>
-	<body class="is-preload">
+@media (max-width:900px){
+  .abertura .grade,.produto,.metodo,.contato-bloco .grade,.frentes{grid-template-columns:1fr;gap:40px}
+  .frentes{gap:0}
+  .menu a:not(.contato){display:none}
+  section{padding:64px 0}
+  .abertura{padding:24px 0 64px}
+  .contato-bloco .email{justify-self:start}
+  .caixa{padding:0 20px}
+  .leitura div,.cobertura div{grid-template-columns:1fr;gap:2px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body class="b">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<div class="cabecalho-abertura">
+  <div class="caixa">
+    <header class="topo">
+      <a class="marca" href="#" aria-label="WZ Cortex, início">
+        <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><rect class="sinal-fundo" width="30" height="30" rx="7" fill="#0d2137"/><path class="sinal" d="M7 10h3l2 7 2-7h2l2 7 2-7h3l-3.6 11h-2.6L15 14.6 13.2 21h-2.6z" fill="#fff"/></svg>
+        WZ Cortex
+      </a>
+      <nav class="menu" aria-label="Principal">
+        <a href="#parllamento">Parllamento</a>
+        <a href="#atuacao">Atuação</a>
+        <a href="#metodo">Método</a>
+        <a class="contato" href="#contato">Fale conosco</a>
+      </nav>
+    </header>
 
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-							<span style="font-size: clamp(32px, 6vw, 54px); font-weight: bold; color: #38b6ff;">WZ</span>
-						</div>
-						<div class="content">
-							<div class="inner">
-								<h1 style="font-size: 68px;">WZCortex</h1>
-								<p>Criamos para funcionar. Inovamos para transformar. Evoluímos para impactar.</p>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#intro">Sobre</a></li>
-								<!--<li><a href="#work">Soluções</a></li>-->
-								<li><a href="#about">Missão</a></li>
-								<li><a href="https://wzcortex.com/revisou/sobre.html" target="_blank">Revisou App</a></li>
-								<li><a href="#contact">Contato</a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
-							</ul>
-						</nav>
-					</header>
+    <div class="abertura">
+      <div class="grade">
+        <div>
+          <h1>Inteligência analítica que mostra de onde veio cada conclusão.</h1>
+          <p class="apoio">A WZ Cortex transforma grandes volumes de informação pública em análise organizada, rastreável e comparável, para quem precisa decidir com base em evidência.</p>
+          <div class="acoes">
+            <a class="botao principal" href="#parllamento">Conhecer o Parllamento</a>
+            <a class="botao contorno" href="#contato">Falar com a equipe</a>
+          </div>
+        </div>
 
-				<!-- Main -->
-					<div id="main">
+        <div class="prova">
+          <div class="folha">
+            <div class="origem"><span>Pronunciamento em Plenário</span><span>Fonte oficial</span></div>
+            <p class="fala">“Não podemos votar esta matéria sem ouvir os municípios. <mark>O texto retira recursos da atenção básica</mark> e transfere a conta para quem menos pode pagar. <mark>Vou apresentar emenda</mark> para corrigir esse ponto.”</p>
+            <dl class="leitura">
+              <div><dt>Tema</dt><dd>Saúde <span>· financiamento da atenção básica</span></dd></div>
+              <div><dt>Posição</dt><dd>Contrária ao texto atual</dd></div>
+              <div><dt>Compromisso</dt><dd>Apresentar emenda</dd></div>
+            </dl>
+          </div>
+          <p class="nota-exemplo">Exemplo ilustrativo de como uma fala vira análise com trecho de origem.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-						<!-- Intro -->
-							<article id="intro">
-								<h2 class="major">Sobre</h2>
-								<!-- <span class="image main"><img src="images/pic01.jpg" alt="" /></span> -->
-								<p>
-								  A <strong>WZ Cortex</strong> é um estúdio brasileiro de tecnologia que cria, testa e escala 
-								  <strong><a href="#work">produtos digitais inteligentes</a></strong>, combinando inteligência artificial, dados e automação.<br>
-								  Nosso foco está em resolver dores reais com velocidade e precisão, desenvolvendo soluções que ajudam pessoas e empresas a economizar tempo, decidir melhor e agir com mais clareza.<br>
-								  Já lançamos produtos como o <strong>WZVids</strong>, e temos outros em desenvolvimento, como o <strong>WZCards</strong>. Nosso diferencial é transformar dados em produtos úteis e replicáveis, com ciclos curtos de validação.<br>
-								  Atuamos com propósito: criar tecnologia que funcione de verdade e melhore o que importa — tempo, resultado e direção.
-								</p>
-							</article>
+<section id="parllamento" class="faixa">
+  <div class="caixa produto">
+    <div>
+      <div class="nome">Parllamento</div>
+      <p class="lema">Inteligência além do discurso.</p>
+      <dl class="cobertura">
+        <div><dt>Cobertura</dt><dd>Discursos de Plenário da Câmara dos Deputados e do Senado Federal</dd></div>
+        <div><dt>Leituras</dt><dd>Sessões, parlamentares, temas, entidades citadas e mapa temático</dd></div>
+        <div><dt>Evidência</dt><dd>Trecho literal e caminho até o texto oficial em cada análise</dd></div>
+      </dl>
+    </div>
+    <div class="texto">
+      <p><strong>Nosso principal produto.</strong> O Parllamento transforma a atividade parlamentar publicada em fontes oficiais em informação organizada, rastreável e comparável.</p>
+      <p>Ler discurso parlamentar em volume é lento, e o essencial fica disperso no texto: posições, compromissos, entidades citadas, temas. O Parllamento organiza cada pronunciamento em blocos de análise e liga cada conclusão ao trecho que a sustenta.</p>
+      <p>Assim dá para acompanhar a atuação por parlamentar, tema e entidade sem perder de vista de onde veio cada informação.</p>
+      <div class="acoes"><a class="botao principal" href="https://parllamento.com" target="_blank" rel="noopener">Acessar o Parllamento</a></div>
+      <p class="fase">Versão em validação, aberta para consulta.</p>
+    </div>
+  </div>
+</section>
 
-						<!-- Work -->
-							<article id="work">
-								<h2 class="major">Soluções</h2>
-								<br>
-								<!-- <span class="image main"><img src="images/pic02.jpg" alt="" /></span> -->
-								<h2>O que estamos construindo</h2>
-								  <p>Conheça os primeiros produtos do ecossistema <strong>WZCortex</strong>:</p>
-								  <ul>
-								    <li><strong><a href="https://www.wztrends.com" target="_blank">WZTrends</a></strong> – Detecte o que está em alta.</li>
-								    <li><strong><a href="https://www.wzvids.com" target="_blank">WZVids</a></strong> – Resumos inteligentes de vídeos.</li>
-								    <li><strong>WZFlash</strong> (em breve) – Flashcards com IA para concursos e ENEM.</li>
-								    <li><strong>WZDrop</strong> (em breve) – Alertas inteligentes de tendências e novidades.</li>
-								  </ul>
+<section id="atuacao">
+  <div class="caixa">
+    <div class="cabeca">
+      <h2>O que a WZ Cortex faz</h2>
+      <p>Somos uma empresa de tecnologia especializada em inteligência analítica. Construímos e operamos os nossos próprios produtos e aplicamos o mesmo método em projetos de clientes.</p>
+    </div>
+    <div class="frentes">
+      <div class="frente"><h3>Plataformas e portais digitais</h3><p>Operação de plataformas próprias, com produção e distribuição de informação especializada por assinatura.</p></div>
+      <div class="frente"><h3>Dados e inteligência analítica</h3><p>Processamento, tratamento e análise de grandes volumes de dados, do documento bruto ao indicador comparável.</p></div>
+      <div class="frente"><h3>Software, IA e automação</h3><p>Licenciamento de softwares, sistemas de inteligência artificial e soluções de automação desenvolvidos pela nossa equipe.</p></div>
+      <div class="frente"><h3>Consultoria e pesquisa</h3><p>Consultoria técnica em tecnologia da informação e em análise de dados, com pesquisa e inovação tecnológica contínuas.</p></div>
+    </div>
+  </div>
+</section>
 
-								  <p><em>Todos criados com a mesma filosofia: funcionais, acessíveis e prontos para escalar.</em></p>
-							</article>
+<section id="metodo" class="faixa">
+  <div class="caixa metodo">
+    <div class="cabeca">
+      <h2>Análise só vale quando pode ser conferida</h2>
+      <p>É o princípio que orienta tudo o que publicamos e entregamos.</p>
+    </div>
+    <div class="principios">
+      <div><h3>Toda conclusão tem origem</h3><p>Cada afirmação aponta para o trecho e para o documento oficial de onde saiu.</p></div>
+      <div><h3>A fonte fala por si</h3><p>Separamos o que a fonte diz do que a análise conclui. O que alguém declarou é a fala dessa pessoa, não um fato verificado por nós.</p></div>
+      <div><h3>Limites à vista</h3><p>Dizemos o período coberto, o que ficou de fora e onde uma análise automática pode errar.</p></div>
+    </div>
+  </div>
+</section>
 
-						<!-- About -->
-							<article id="about">
-								<h2 class="major">Missão</h2>
-								<!-- <span class="image main"><img src="images/pic03.jpg" alt="" /></span> -->
-								<p>Transformar dados, automação e inteligência artificial em soluções inteligentes, acessíveis e aplicáveis — criando produtos que realmente geram valor para pessoas e negócios.</p>
-							</article>
-
-						<!-- Contact -->
-							<article id="contact">
-								<h2 class="major">Contato</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Nome</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">E-mail</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Mensagem</label>
-											<textarea name="message" id="message" rows="4"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Enviar" class="primary" /></li>
-										<li><input type="reset" value="Limpar" /></li>
-									</ul>
-								</form>
-								<ul class="icons">
-									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</article>
-
-						<!-- Elements -->							
-
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<p><a href="mailto:wzcortex@gmail.com">wzcortex@gmail.com</a></p>
-
-						<ul class="icons">
-							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-						
-						<p class="copyright">&copy; WZCortex 2025.</p>
-					</footer>
-
-			</div>
-
-		<!-- BG -->
-			<div id="bg"></div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+<section id="contato" class="contato-bloco">
+  <div class="caixa grade">
+    <div>
+      <h2>Vamos conversar sobre os seus dados.</h2>
+      <p>Para conhecer o Parllamento, propor uma parceria ou discutir um projeto de análise, escreva para a nossa equipe.</p>
+    </div>
+    <a class="email" href="mailto:wzcortex@gmail.com">wzcortex@gmail.com</a>
+  </div>
+</section>
+<footer class="rodape">
+  <div class="caixa">
+    <span>© 2026 WZ Cortex. Brasília, Brasil.</span>
+    <span><a href="https://parllamento.com" target="_blank" rel="noopener">Parllamento</a><a href="revisou/sobre.html">Revisou App</a></span>
+  </div>
+</footer>
+</body>
 </html>
