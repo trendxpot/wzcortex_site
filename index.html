@@ -11,9 +11,9 @@
 <meta property="og:url" content="https://wzcortex.com/">
 <meta property="og:title" content="WZ Cortex — Inteligência analítica">
 <meta property="og:description" content="Inteligência analítica que mostra de onde veio cada conclusão. Conheça o Parllamento.">
-<meta property="og:image" content="https://wzcortex.com/assets/img/android-chrome-512x512.png">
-<meta name="twitter:card" content="summary">
-<meta name="theme-color" content="#0d2137">
+<meta property="og:image" content="https://wzcortex.com/assets/img/compartilhar.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ffffff">
 <link rel="icon" href="assets/img/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
@@ -22,12 +22,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --tinta:#0d2137;        /* texto e fundos escuros */
-  --tinta-2:#42586f;      /* texto secundário */
+  --tinta:#25282b;        /* grafite: texto e bloco escuro, da família do cinza da logo */
+  --tinta-2:#5a5f64;      /* texto secundário */
   --papel:#ffffff;
-  --nevoa:#f1f5f8;        /* faixas alternadas */
-  --linha:#dbe4ec;
-  --petroleo:#006e8f;     /* cor de ação, a mesma família do Parllamento */
+  --nevoa:#f3f3f2;        /* faixas alternadas */
+  --linha:#e0e1e1;
+  --petroleo:#006e8f;     /* cor do Parllamento, usada só no que é do produto */
   --petroleo-esc:#00566f;
   --marca-texto:#ffe08a;  /* o grifo sobre o trecho literal */
   --sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -45,30 +45,35 @@ p{margin:0}
 /* topo */
 .topo{display:flex;align-items:center;justify-content:space-between;padding:26px 0}
 .marca{font-weight:700;font-size:21px;letter-spacing:-0.02em;text-decoration:none;display:flex;align-items:center;gap:10px}
-.marca svg{display:block}
+.marca img{display:block;height:34px;width:auto}
 .menu{display:flex;gap:34px;align-items:center;font-size:15.5px;font-weight:500}
 .menu a{text-decoration:none;color:var(--tinta-2)}
 .menu a:hover{color:var(--tinta)}
 .menu .contato{color:var(--papel);background:var(--tinta);padding:9px 18px;border-radius:8px}
-.menu .contato:hover{background:#16314f;color:#fff}
+.menu .contato:hover{background:#3a3e42;color:#fff}
 
-/* abertura */
+/* abertura: o plano cinza ao fundo repete a diagonal do Z da logo */
+.cabecalho-abertura{position:relative;overflow:hidden}
+.cabecalho-abertura::before{content:"";position:absolute;inset:0 -100% 0 44%;background:var(--nevoa);transform:skewX(-43deg);transform-origin:bottom left}
+.cabecalho-abertura > .caixa{position:relative}
 .abertura{padding:56px 0 96px}
 .abertura .grade{display:grid;grid-template-columns:1.02fr 1fr;gap:64px;align-items:center}
 .abertura h1{font-size:clamp(40px,5vw,62px)}
 .abertura .apoio{margin-top:24px;font-size:20px;color:var(--tinta-2);max-width:30em;line-height:1.55}
 .acoes{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
 .botao{display:inline-block;padding:14px 24px;border-radius:9px;font-weight:600;font-size:16px;text-decoration:none;border:1.5px solid transparent}
-.botao.principal{background:var(--petroleo);color:#fff}
-.botao.principal:hover{background:var(--petroleo-esc)}
+.botao.principal{background:var(--tinta);color:#fff}
+.botao.principal:hover{background:#3a3e42}
+.botao.acesso{background:var(--petroleo);color:#fff}
+.botao.acesso:hover{background:var(--petroleo-esc)}
 .botao.contorno{border-color:var(--linha);color:var(--tinta)}
 .botao.contorno:hover{border-color:var(--tinta-2)}
 
 /* a peça central: do trecho à conclusão */
 .prova{position:relative}
-.folha{color:var(--tinta);background:#fff;border:1px solid var(--linha);border-radius:14px;padding:30px 32px 28px;box-shadow:0 24px 60px -28px rgba(13,33,55,.35)}
+.folha{color:var(--tinta);background:#fff;border:1px solid var(--linha);border-radius:14px;padding:30px 32px 28px;box-shadow:0 24px 60px -28px rgba(37,40,43,.32)}
 .folha .origem{font-size:13.5px;color:var(--tinta-2);display:flex;justify-content:space-between;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--linha)}
-.folha .fala{font-family:var(--serif);font-size:21px;line-height:1.62;margin-top:20px;color:#1a2f47}
+.folha .fala{font-family:var(--serif);font-size:21px;line-height:1.62;margin-top:20px;color:var(--tinta)}
 .folha mark{background:var(--marca-texto);color:inherit;padding:1px 3px;border-radius:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .leitura{margin-top:24px;display:grid;gap:10px}
 .leitura div{display:grid;grid-template-columns:118px 1fr;gap:14px;font-size:15px;align-items:baseline}
@@ -113,25 +118,14 @@ section{padding:92px 0}
 .contato-bloco{background:var(--tinta);color:#fff}
 .contato-bloco .grade{display:grid;grid-template-columns:1.2fr .8fr;gap:64px;align-items:end}
 .contato-bloco h2{font-size:clamp(32px,3.8vw,48px)}
-.contato-bloco p{margin-top:18px;color:#b9c8d8;font-size:19px;max-width:28em}
+.contato-bloco p{margin-top:18px;color:#c6c9cc;font-size:19px;max-width:28em}
 .contato-bloco .email{font-size:clamp(22px,2.4vw,30px);font-weight:600;text-decoration:none;border-bottom:2px solid var(--marca-texto);padding-bottom:4px;justify-self:end}
-.rodape{background:var(--tinta);color:#8da1b6;font-size:14.5px;border-top:1px solid #213a56}
-.rodape .caixa{display:flex;justify-content:space-between;gap:24px;padding-top:26px;padding-bottom:30px;flex-wrap:wrap}
+.rodape{background:var(--papel);color:var(--tinta-2);font-size:14.5px}
+.rodape .caixa{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-top:30px;padding-bottom:34px;flex-wrap:wrap}
+.rodape .assinatura{display:flex;align-items:center;gap:16px}
+.rodape img{display:block;height:20px;width:auto}
 .rodape a{text-decoration:none;margin-left:24px}
-.rodape a:hover{color:#fff}
-
-/* proposta B: abertura escura */
-body.b .cabecalho-abertura{background:var(--tinta);color:#fff}
-body.b .menu a{color:#b9c8d8}
-body.b .menu a:hover{color:#fff}
-body.b .menu .contato{background:#fff;color:var(--tinta)}
-body.b .abertura .apoio{color:#b9c8d8}
-body.b .cabecalho-abertura .botao.principal{background:#fff;color:var(--tinta)}
-body.b .cabecalho-abertura .botao.contorno{border-color:#34506f;color:#fff}
-body.b .folha{border-color:transparent;box-shadow:0 30px 70px -30px rgba(0,0,0,.7)}
-body.b .nota-exemplo{color:#8da1b6}
-body.b .marca .sinal{fill:#fff}
-body.b .marca .sinal-fundo{fill:var(--petroleo)}
+.rodape a:hover{color:var(--tinta)}
 
 @media (max-width:900px){
   .abertura .grade,.produto,.metodo,.contato-bloco .grade,.frentes{grid-template-columns:1fr;gap:40px}
@@ -139,6 +133,7 @@ body.b .marca .sinal-fundo{fill:var(--petroleo)}
   .menu a:not(.contato){display:none}
   section{padding:64px 0}
   .abertura{padding:24px 0 64px}
+  .cabecalho-abertura::before{display:none}
   .contato-bloco .email{justify-self:start}
   .caixa{padding:0 20px}
   .leitura div,.cobertura div{grid-template-columns:1fr;gap:2px}
@@ -146,15 +141,12 @@ body.b .marca .sinal-fundo{fill:var(--petroleo)}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
-<body class="b">
+<body>
 
 <div class="cabecalho-abertura">
   <div class="caixa">
     <header class="topo">
-      <a class="marca" href="#" aria-label="WZ Cortex, início">
-        <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><rect class="sinal-fundo" width="30" height="30" rx="7" fill="#0d2137"/><path class="sinal" d="M7 10h3l2 7 2-7h2l2 7 2-7h3l-3.6 11h-2.6L15 14.6 13.2 21h-2.6z" fill="#fff"/></svg>
-        WZ Cortex
-      </a>
+      <a class="marca" href="#"><img src="assets/img/logo-wz.png" width="778" height="393" alt="WZ Cortex"></a>
       <nav class="menu" aria-label="Principal">
         <a href="#parllamento">Parllamento</a>
         <a href="#atuacao">Atuação</a>
@@ -206,7 +198,7 @@ body.b .marca .sinal-fundo{fill:var(--petroleo)}
       <p><strong>Nosso principal produto.</strong> O Parllamento transforma a atividade parlamentar publicada em fontes oficiais em informação organizada, rastreável e comparável.</p>
       <p>Ler discurso parlamentar em volume é lento, e o essencial fica disperso no texto: posições, compromissos, entidades citadas, temas. O Parllamento organiza cada pronunciamento em blocos de análise e liga cada conclusão ao trecho que a sustenta.</p>
       <p>Assim dá para acompanhar a atuação por parlamentar, tema e entidade sem perder de vista de onde veio cada informação.</p>
-      <div class="acoes"><a class="botao principal" href="https://parllamento.com" target="_blank" rel="noopener">Acessar o Parllamento</a></div>
+      <div class="acoes"><a class="botao acesso" href="https://parllamento.com" target="_blank" rel="noopener">Acessar o Parllamento</a></div>
       <p class="fase">Versão em validação, aberta para consulta.</p>
     </div>
   </div>
@@ -252,7 +244,7 @@ body.b .marca .sinal-fundo{fill:var(--petroleo)}
 </section>
 <footer class="rodape">
   <div class="caixa">
-    <span>© 2026 WZ Cortex. Brasília, Brasil.</span>
+    <span class="assinatura"><img src="assets/img/logo-wz.png" width="778" height="393" alt=""><span>© 2026 WZ Cortex. Brasília, Brasil.</span></span>
     <span><a href="https://parllamento.com" target="_blank" rel="noopener">Parllamento</a><a href="revisou/sobre.html">Revisou App</a></span>
   </div>
 </footer>
